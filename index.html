@@ -2390,6 +2390,8 @@ function blogStage(r){
     if ((r.topic_approved || r.deliverable === 'linkedin_article') && !r.approved) return { cls:'b-writing', label:'Being written' };
     return null;
   }
+  // One-off (Jhen, 16/10/2026): October blogs written as Google Docs are done, so show them as Ready for QC, not Writing.
+  if (!a && r.stream === 'blog' && r.month_key === '2026-10' && r.doc_url && !r.approved) return { cls:'b-qc', label:'Ready for QC' };
   if (!a) return (r.topic_approved || r.deliverable === 'linkedin_article') && !r.approved ? { cls:'b-writing', label:'Writing' } : null;
   if (a.released_at) return { cls:'b-client', label:'With the client' };
   if (a.qc_status === 'approved') return { cls:'b-ready', label:'QC approved · releases ' + ausDate(r.review_on) };
