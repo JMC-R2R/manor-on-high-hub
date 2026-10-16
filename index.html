@@ -3296,7 +3296,10 @@ function itemCard(r, staff){
             + '<button class="notebtn wpbtn" type="button" data-wpcopy="'+id+'" title="See the post and its HTML, then copy it for a WordPress Custom HTML block">View &amp; copy HTML</button>' : '')
       + (staff && ARTICLES[r.id] && li
           ? '<button class="notebtn wpbtn" type="button" data-lipack="'+id+'" title="Article ready to paste, banner, meta and promo post">LinkedIn pack</button>' : '')
-      + link(r.doc_url, '', 'Draft') + link(r.live_url, 'live', 'Live')
+      + (r.stream === 'blog' && r.doc_url && !ARTICLES[r.id]
+          ? '<a class="notebtn readbtn" href="'+esc(r.doc_url)+'" target="_blank" rel="noopener">Read &amp; comment</a>'
+          : link(r.doc_url, '', 'Draft'))
+      + link(r.live_url, 'live', (r.stream === 'location_page' || r.stream === 'service_page') ? 'View page' : 'Live')
     + '</div></div>'
     + '<div class="ticks">'
       + (isPlanned(r) && !li
@@ -4152,10 +4155,10 @@ function progressMarkup(){
           + '<td><select data-assign="'+id+'">'+assignOpts(r.id)+'</select></td>'
           + '<td><select data-status="'+id+'">'+statusOpts(r.id)+'</select></td>'
           + '<td class="lnk">'
-            + (r.doc_url  ? '<a class="dl" href="'+esc(r.doc_url)+'" target="_blank" rel="noopener">Draft</a>'
+            + (r.doc_url  ? '<a class="dl" href="'+esc(r.doc_url)+'" target="_blank" rel="noopener">'+(r.stream === 'blog' ? 'Read &amp; comment' : 'Draft')+'</a>'
                           : '<span class="dl-none">—</span>')
             + ' '
-            + (r.live_url ? '<a class="dl live" href="'+esc(r.live_url)+'" target="_blank" rel="noopener">Live</a>'
+            + (r.live_url ? '<a class="dl live" href="'+esc(r.live_url)+'" target="_blank" rel="noopener">'+((r.stream === 'location_page' || r.stream === 'service_page') ? 'View page' : 'Live')+'</a>'
                           : '<span class="dl-none">—</span>')
             + '</td>'
           + '<td><span class="sp '+esc(r.client_status)+'">'
