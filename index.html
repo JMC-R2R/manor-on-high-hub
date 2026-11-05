@@ -1838,6 +1838,32 @@ async function boot(){
   const { data:{ session } } = await sb.auth.getSession();
   if (!session) { $('loginView').classList.remove('hide'); $('appView').classList.add('hide'); return; }
 
+  // manor one-offs 05/11/2026: Savvas View. A partner login sees only the Reporting tab of a client
+  // it is granted on (ch_partner_access) and is refused on every other hub. Nothing else is loaded.
+  const { data: pa } = await sb.rpc('ch_partner_access_here', { p_slug: CFG.slug });
+  if (pa && pa.is_partner) {
+    if (!pa.here) {
+      await sb.auth.signOut();
+      $('loginView').classList.remove('hide'); $('appView').classList.add('hide');
+      $('loginErr').textContent = 'That login has no access to this hub.';
+      return;
+    }
+    ME = { kind:'client', partner: pa.here.partner, savvas: true, name: pa.here.full_name, clientId: null, id: session.user.id };
+    RELEASED = true;
+    CLIENT_NAME = pa.here.client_name || CFG.clientName || '';
+    SOCIALS = CFG.socials || {}; WATERMARK = CFG.watermark || '';
+    if ($('footSocials')) $('footSocials').innerHTML = socialStrip()
+      || '<p class="foot-none">No channels recorded yet.</p>';
+    if ($('footYear')) $('footYear').textContent = new Date().getFullYear();
+    if (WATERMARK) document.documentElement.style.setProperty('--wm', 'url(' + WATERMARK + ')');
+    $('loginView').classList.add('hide'); $('appView').classList.remove('hide');
+    $('whoChip').innerHTML = esc(ME.name);
+    buildTabs();
+    paintGreeting();
+    selectTab('reporting', false);
+    return;
+  }
+
   const { data: clientRow } = await sb.from('ch_client_users')
     .select('client_id, full_name').eq('user_id', session.user.id).eq('active', true).maybeSingle();
 
@@ -4007,6 +4033,7 @@ $('liCopy').addEventListener('click', async () => {
 function renderPanel(t){
   const el = $('panel-'+cssId(t.key));
   if (!el) return;
+  if (ME && ME.partner && t.key !== 'reporting') { el.innerHTML = '<p class="empty">' + LOCK_SVG + ' Not part of your access.</p>'; return; }
   if (t.monthKey !== undefined) { el.innerHTML = head(t)+monthStrip(t.key)+rmBarMarkup()+monthBriefMarkup(t); wireMonthBrief(el,t); rmWire(el); return; }
   if (t.key === 'keywords')     { el.innerHTML = head(t)+keywordsMarkup();                          return; }
   if (t.key === 'wins')         { el.innerHTML = head(t)+winsMarkup();       wireWins(el);          return; }
