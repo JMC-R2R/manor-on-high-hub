@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Poppins:wght@400;500;600;700&display=swap');
+/* Manor On High location page (from manoronhigh.com.au/toorak-wedding-venue/ and /brighton-wedding-venue/, captured 11/11/2026). Gold #9D8048, ink #262123, cream #F8EDCC. */
+.pgframe .mh-hero,.pgframe .mh-sec,.pgframe .mh-book,.pgframe .mhh,.pgframe .mhf{font-family:'Poppins',system-ui,sans-serif;font-size:15px;line-height:25px;color:#262123;box-sizing:border-box}
+.pgframe .mh-sec *,.pgframe .mh-hero *,.pgframe .mh-book *{box-sizing:border-box}
+.pgframe .mh-sec h2,.pgframe .mh-book h2,.pgframe .mh-hero h1{font-family:'Playball',cursive;font-weight:400;letter-spacing:0}
+/* hero: background video under a black to grey gradient, H1 only */
+.pgframe .mh-hero{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:clamp(380px,55cqi,630px);padding:80px 15px;background:#000 url('https://manoronhigh.com.au/wp-content/uploads/2026/01/ManorOnHigh_GrandBallroom_Stills-26-1024x683.jpg') center/cover no-repeat;text-align:center}
+.pgframe .mh-hero .mh-bgv{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;margin:0;max-width:none;border-radius:0}
+.pgframe .mh-hero::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#000 0%,#30303061 100%);opacity:.85}
+.pgframe .mh-hero h1{position:relative;z-index:2;margin:0 auto;max-width:1140px;color:#9D8048;font-size:clamp(40px,5.7cqi,65px);line-height:1.08}
+/* sections */
+.pgframe .mh-sec{padding:50px 15px;background:#fff}
+.pgframe .mh-sec>*{max-width:1140px;margin-left:auto;margin-right:auto}
+.pgframe .mh-sec h2{text-align:center;color:#000;font-size:clamp(25px,2.9cqi,32px);line-height:42px;margin:0 auto 22px}
+.pgframe .mh-sec h2::after{content:'';display:block;width:20%;min-width:110px;height:4px;margin:4px auto 0;background:url('https://manoronhigh.com.au/wp-content/uploads/2025/11/Vector-153.png') center/100% 100% no-repeat}
+.pgframe .mh-sec p{margin:0 0 14px;font-size:15px;line-height:25px;color:#262123}
+.pgframe .mh-sec a{color:#9D8048}
+.pgframe .mh-btn{display:inline-block;background:#9D8048;color:#fff!important;font-family:'Poppins',sans-serif;font-size:16px;font-weight:500;line-height:25px;text-transform:uppercase;text-decoration:none;border-radius:4px;padding:12px 24px;margin-top:6px}
+.pgframe .mh-btn:hover{background:#262123}
+/* virtual tour */
+.pgframe .mh-tour iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0;background:#262123}
+/* image and copy rows */
+.pgframe .mh-row{display:flex;align-items:center;gap:20px;margin-top:20px}
+.pgframe .mh-row+.mh-row{margin-top:40px}
+.pgframe .mh-row.mh-rev{flex-direction:row-reverse}
+.pgframe .mh-copy{flex:0 0 55%;min-width:0;padding:10px}
+.pgframe .mh-copy h2{text-align:left;margin-left:0}
+.pgframe .mh-copy h2::after{width:50%;margin-left:0}
+.pgframe .mh-frame{flex:1;min-width:0;position:relative;margin:0;background:#F8EDCC;padding:22px 10px 22px 0}
+.pgframe .mh-frame img{display:block;width:calc(100% + 2px);height:400px;margin:0 0 0 -12px;object-fit:cover;border-radius:0;max-width:none}
+.pgframe .mh-frame::after{content:'';position:absolute;top:32px;bottom:32px;left:-2px;right:20px;border:1px solid #9D8048;pointer-events:none}
+.pgframe .mh-frame.mh-tall img{height:700px}
+.pgframe .mh-rooms p b a,.pgframe .mh-rooms p a b{color:#9D8048;font-weight:700;text-decoration:none}
+.pgframe .mh-rooms p.mh-room{margin-bottom:2px}
+.pgframe .mh-room a{text-decoration:none}
+/* why us icon boxes on the floral backdrop */
+.pgframe .mh-floral{background:#fff url('https://manoronhigh.com.au/wp-content/uploads/2025/11/Mask-group-6.png') center/cover no-repeat}
+.pgframe .mh-dream h2::after{width:40%}
+.pgframe .mh-boxes{list-style:none;padding:0;margin-top:10px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.pgframe .mh-boxes li{background:#fff;border:2px groove #9D8048;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,.5);padding:15px 10px 0;margin:0;text-align:center}
+.pgframe .mh-boxes svg{width:50px;height:50px;fill:#9D8048;display:block;margin:0 auto 15px}
+.pgframe .mh-boxes h3{font-family:'Poppins',sans-serif;font-size:18px;font-weight:500;line-height:25px;margin:0 0 15px;color:#262123}
+/* gallery 4 x 4:3 */
+.pgframe .mh-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.pgframe .mh-grid img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;margin:0;border-radius:0}
+/* book today band */
+.pgframe .mh-book{background:#262123;padding:20px max(15px,calc((100% - 1140px)/2));display:flex;align-items:center;gap:0}
+.pgframe .mh-book>div{flex:0 0 80%;padding:10px}
+.pgframe .mh-book h2{color:#fff;font-size:clamp(25px,3.3cqi,38px);line-height:1.2;margin:0 0 10px}
+.pgframe .mh-book p{color:#fff;margin:0}
+.pgframe .mh-book .mh-btn{margin:0 auto}
+.pgframe .mh-book .mh-btn:hover{background:#54595F}
+/* testimonials */
+.pgframe .mh-reviews h2::after{width:32%}
+.pgframe .mh-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding-top:20px}
+.pgframe .mh-card{background:#fff;border:1px solid #e6e6e6;border-radius:8px;box-shadow:0 3px 12px rgba(0,0,0,.08);padding:18px}
+.pgframe .mh-card header{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+.pgframe .mh-ava{width:40px;height:40px;border-radius:50%;background:#9D8048;color:#fff;display:grid;place-items:center;font-weight:600;flex:none}
+.pgframe .mh-card header b{display:block;font-size:15px;line-height:1.2}
+.pgframe .mh-card header small{display:block;font-size:12px;color:#8a8a8a;line-height:1.3}
+.pgframe .mh-g{margin-left:auto;font:700 18px/1 Arial,sans-serif;color:#4285F4}
+.pgframe .mh-card p.mh-stars{color:#f6bb06;font-size:17px;letter-spacing:2px;margin:0 0 6px}
+.pgframe .mh-card p{font-size:14px;line-height:22px;margin:0}
+/* FAQ: numbered gold squares, gold borders */
+.pgframe .mh-faq{padding:80px 50px}
+.pgframe .mh-acc{counter-reset:mhfaq;display:grid;gap:10px}
+.pgframe .mh-acc details{margin:0}
+.pgframe .mh-acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #9D8048;padding:10px 10px 10px 55px;position:relative;font-size:18px;font-weight:700;line-height:25px;color:#262123;min-height:45px;background:#fff}
+.pgframe .mh-acc summary::-webkit-details-marker{display:none}
+.pgframe .mh-acc summary::before{counter-increment:mhfaq;content:counter(mhfaq);position:absolute;left:0;top:0;width:45px;height:45px;display:grid;place-items:center;background:#e2b934;color:#000;font-size:25px;font-weight:700}
+.pgframe .mh-acc summary::after{content:'';flex:none;width:9px;height:9px;border:solid #9D8048;border-width:0 2px 2px 0;transform:rotate(-45deg);margin-right:6px}
+.pgframe .mh-acc details[open] summary{color:#000}
+.pgframe .mh-acc details[open] summary::after{transform:rotate(45deg)}
+.pgframe .mh-acc details p{border:1px solid #9D8048;border-top:0;margin:0;padding:10px 15px;box-shadow:0 0 10px rgba(255,248,16,.5);font-size:15px;line-height:20px;background:#fff}
+/* ready to begin + enquiry form (static) */
+.pgframe .mh-cta{text-align:center}
+.pgframe .mh-cta h2::after{display:none}
+.pgframe .mh-cta>p{max-width:760px;line-height:20px;margin:0 auto 14px}
+.pgframe .mh-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:900px;margin-top:20px;text-align:left}
+.pgframe .mh-in{display:block;border:1px solid #262123;border-radius:4px;padding:11px 14px;font-size:14px;color:#000;background:transparent}
+.pgframe .mh-in.mh-wide{grid-column:1/-1;min-height:96px}
+.pgframe .mh-submit{grid-column:1/-1;justify-self:start;background:#9D8048;color:#fff;border-radius:4px;padding:12px 24px;font-size:15px;min-width:20%;text-align:center}
+@container (max-width:760px){
+ .pgframe .mh-hero{padding:100px 15px;min-height:0}
+ .pgframe .mh-hero h1{font-size:45px;line-height:55px}
+ .pgframe .mh-sec h2{font-size:25px;line-height:35px}
+ .pgframe .mh-sec h2::after{width:50%}
+ .pgframe .mh-row,.pgframe .mh-row.mh-rev{flex-direction:column-reverse;align-items:stretch}
+ .pgframe .mh-copy{flex:none;padding:0}
+ .pgframe .mh-frame{flex:none;margin-left:12px}
+ .pgframe .mh-frame img,.pgframe .mh-frame.mh-tall img{height:275px}
+ .pgframe .mh-boxes,.pgframe .mh-cards,.pgframe .mh-grid{grid-template-columns:1fr}
+ .pgframe .mh-book{flex-direction:column;text-align:center;margin-top:60px}
+ .pgframe .mh-book>div{flex:none}
+ .pgframe .mh-book .mh-btn{margin-top:10px}
+ .pgframe .mh-reviews{padding:20px}
+ .pgframe .mh-faq{padding:50px 15px}
+ .pgframe .mh-acc summary{font-size:16px}
+ .pgframe .mh-form{grid-template-columns:1fr}
+ .pgframe .mh-submit{justify-self:stretch}
+}
+
+/* Manor real site header and footer (live site, 11/11/2026). The live header is transparent over the hero video; here it sits on black so it blends into the hero gradient. */
+.pgframe .mhh svg,.pgframe .mhf svg{width:14px;height:14px;fill:currentColor;flex:none}
+.pgframe .mhh{background:#000;color:#fff;display:flex;align-items:center;gap:24px;padding:20px clamp(15px,3cqi,40px) 14px}
+.pgframe .mhh img{width:80px;height:auto;margin:0;border-radius:0}
+.pgframe .mhh nav{flex:1;display:flex;justify-content:flex-end;flex-wrap:wrap;font-size:17px}
+.pgframe .mhh nav span{display:inline-flex;align-items:center;gap:6px;padding:10px 12px}
+.pgframe .mhh nav svg{width:11px;height:11px}
+.pgframe .mhh-btn{border:1px solid #fff;border-radius:4px;padding:12px 15px;font-size:16px;font-weight:600;line-height:21px;white-space:nowrap}
+.pgframe .mhh-burger{display:none}
+.pgframe .mhf{background:#262123;color:#fff}
+.pgframe .mhf-cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr 1.3fr;gap:10px 24px;max-width:1140px;margin:0 auto;padding:50px 15px 20px}
+.pgframe .mhf-about img{width:35%;max-width:140px;height:auto;margin:0 0 10px;border-radius:0}
+.pgframe .mhf-about p{font-size:14px;line-height:25px;margin:0 0 14px;color:#fff}
+.pgframe .mhf-soc{display:flex;gap:10px}
+.pgframe .mhf-soc i{width:34px;height:34px;border-radius:50%;background:#9D8048;color:#262123;display:grid;place-items:center}
+.pgframe .mhf-soc svg{width:17px;height:17px}
+.pgframe .mhf h3{font-family:'Playball',cursive;font-weight:400;font-size:22px;color:#9D8048;margin:0 0 12px}
+.pgframe .mhf ul{list-style:none;margin:0;padding:0}
+.pgframe .mhf li{position:relative;padding-left:20px;font-size:14px;font-weight:500;line-height:21px;margin:0 0 5px;color:#fff}
+.pgframe .mhf li::before{content:'';position:absolute;left:0;top:4px;width:14px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239D8048'%3E%3Cpath d='M12 21s-7.5-4.6-9.5-9.2C1 8.3 3.2 4.5 7 4.5c2 0 3.6 1.1 5 2.8 1.4-1.7 3-2.8 5-2.8 3.8 0 6 3.8 4.5 7.3C19.5 16.4 12 21 12 21z'/%3E%3C/svg%3E") center/contain no-repeat}
+.pgframe .mhf-bar{background:#9D8048;color:#fff;text-align:center;font-size:16px;line-height:25px;padding:10px 15px}
+@container (max-width:760px){
+ .pgframe .mhh{padding:10px 15px;justify-content:space-between;gap:10px}
+ .pgframe .mhh img{width:60px}
+ .pgframe .mhh nav{display:none}
+ .pgframe .mhh-btn{padding:10px;margin-left:auto}
+ .pgframe .mhh-burger{display:grid;place-items:center}
+ .pgframe .mhh-burger svg{width:24px;height:24px}
+ .pgframe .mhf-cols{grid-template-columns:1fr;gap:28px}
+ .pgframe .mhf-about p{padding-top:6px}
+ .pgframe .mhf-bar{font-size:14px}
+}
