@@ -132,3 +132,7 @@
  .pgframe .mhf-about p{padding-top:6px}
  .pgframe .mhf-bar{font-size:14px}
 }
+
+/* Embed stills (12/11/2026): live maps, video and tour replaced by snapshots for the mockup */
+.pgframe a.pg-snap{display:block;text-decoration:none}
+.pgframe .mh-tour img{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;max-width:none}
